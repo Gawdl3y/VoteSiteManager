@@ -1,0 +1,17 @@
+# Message to say before listing the sites with /vote
+vote-message: '&6Vote for us at these sites (you can click on them while you have your chat box open):'
+broadcast-message: '&6Vote for us at these sites (you can click on them while you have your chat box open):'
+
+# Text to prepend to each website listed in /vote command
+vote-site-prefix: '&3'
+broadcast-site-prefix: '&3'
+
+# The amount of delay in between each site being displayed to the user of the /vote command
+# This is measured in server ticks, so 20 = 1 second; 10 = half of a second; 0 = no delay
+vote-site-delay: 10
+broadcast-site-delay: 20
+
+# The websites players can vote at
+sites:
+    # - http://example.com/vote.php?id=42
+    # - https://example2.net/ultravotingthing.aspsux?site=1337

@@ -1,0 +1,68 @@
+name: VoteSiteManager
+version: 1.1.1
+description: A tool to manage server voting sites, and list them to players
+author: Gawdl3y
+website: http://dev.bukkit.org/bukkit-plugins/voting-site-manager/
+
+main: com.gawdl3y.bukkit.VoteSiteManager.VoteSiteManager
+database: false
+
+commands:
+    vote:
+        description: Lists the websites that a player can vote for the server at
+        usage: /<command>
+        permission: VoteSiteManager.vote
+    broadcastvote:
+        description: Lists the websites that a player can vote for the server at to everyone on the server
+        usage: /<command>
+        permission: VoteSiteManager.broadcast
+        aliases: ["votebroadcast"]
+    vsm:
+        description: The main VSM management command
+        usage: /<command> {list|add|remove|clear|config|reload} [URL|option] [value]
+        permission: VoteSiteManager.manage
+        aliases: [votesitemanager]
+
+permissions:
+    VoteSiteManager.*:
+        description: Gives access to both /vote and /broadcastvote
+        children:
+            VoteSiteManager.vote: true
+            VoteSiteManager.broadcast: true
+    VoteSiteManager.vote:
+        description: Allows players to see the voting sites with /vote
+        default: true
+    VoteSiteManager.broadcast:
+        description: Gives the ability to broadcast the vote command to all connected players
+        default: op
+    VoteSiteManager.manage.*:
+        description: Gives access to all management commands
+        children:
+            VoteSiteManager.manage: true
+            VoteSiteManager.manage.list: true
+            VoteSiteManager.manage.add: true
+            VoteSiteManager.manage.remove: true
+            VoteSiteManager.manage.clear: true
+            VoteSiteManager.manage.config: true
+            VoteSiteManager.manage.reload: true
+    VoteSiteManager.manage:
+        description: Allows access to the VSM management
+        default: op
+    VoteSiteManager.manage.list:
+        description: Gives the ability to list the voting sites with indices
+        default: op
+    VoteSiteManager.manage.add:
+        description: Gives the ability to add a voting site
+        default: op
+    VoteSiteManager.manage.remove:
+        description: Gives the ability to remove a voting site
+        default: op
+    VoteSiteManager.manage.clear:
+        description: Gives the ability to clear all of the voting sites
+        default: op
+    VoteSiteManager.manage.config:
+        description: Gives the ability to modify configuration values
+        default: op
+    VoteSiteManager.manage.reload:
+        description: Gives the ability to reload the plugin's configuration
+        default: op
