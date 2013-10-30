@@ -1,0 +1,10 @@
+# Built stuff
+*.class
+out
+bin
+
+# IntelliJ/Android Studio project files
+.idea
+*.iml
+*.ipr
+*.iws
